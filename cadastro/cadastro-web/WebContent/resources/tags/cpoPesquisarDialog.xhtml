@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	<composite:interface displayName="cpoPesquisar">
+		<composite:attribute name="label" />		
+		<composite:attribute name="buttonLabel" />
+		<composite:attribute name="value" />
+		<composite:attribute name="icon" default="ui-icon-search" />
+		<composite:attribute name="required" />		
+		<composite:attribute name="buttonListener" method-signature="void actionListener(javax.faces.event.ActionEvent)" />
+		<composite:attribute name="process" default="@form" />
+		<composite:attribute name="update" default="@form" />
+		<composite:attribute name="dialogReturnListener" method-signature="void actionListener(javax.faces.event.ActionEvent)" />
+		<composite:attribute name="processDialogReturn" />
+		<composite:attribute name="updateDialogReturn" />
+		<composite:attribute name="widgetVar" default="widgetCpoPesq" /> 
+		<composite:attribute name="disabled" type="java.lang.Boolean" />
+		<composite:attribute name="onsuccess" />
+		<composite:attribute name="oncomplete" />
+		<composite:attribute name="onstart" />
+		<composite:attribute name="onerror" />
+		<composite:attribute name="readonly" type="java.lang.Boolean" default="false" />
+		<composite:attribute name="type" default="text" />
+	</composite:interface>
+	<composite:implementation>
+		<div class="input-group">
+		    <p:inputText id="cpoPesquisar" 
+		    	styleClass="form-control search" 
+		    	label="#{cc.attrs.label}" 
+		    	required="#{cc.attrs.required}"
+		    	disabled="#{cc.attrs.disabled}"
+		    	readonly="#{cc.attrs.readonly}" />
+			<span class="input-group-btn">
+				<p:commandButton id="btn"
+					label="#{cc.attrs.buttonLabel}"
+					actionListener="#{cc.attrs.buttonListener}"
+					styleClass="ui-mini-btn-siscorp" 
+		    		widgetVar="#{cc.attrs.widgetVar}"
+					icon="#{cc.attrs.icon}"
+					disabled="#{cc.attrs.disabled}"
+					update="#{cc.attrs.update}"
+					process="#{cc.attrs.process}" 
+					onsuccess="#{cc.attrs.onsuccess}"
+		    		onstart="loading.blockPage();#{cc.attrs.onstart}" 
+					oncomplete="loading.unblockPage();#{cc.attrs.oncomplete}"
+					onerror="loading.unblockPage();#{cc.attrs.onerror}">
+					<p:ajax event="dialogReturn" listener="#{cc.attrs.dialogReturnListener}" update="#{cc.attrs.updateDialogReturn}" process="#{cc.attrs.processDialogReturn}" />
+				</p:commandButton>
+			</span>
+		</div>
+	</composite:implementation>
+</html>

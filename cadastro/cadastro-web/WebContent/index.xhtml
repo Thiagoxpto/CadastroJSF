@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:util="http://java.sun.com/jsf/composite/util"
+      xmlns:mbz="http://java.sun.com/jsf/composite/tags"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+<h:body>
+		<ui:composition template="/WEB-INF/templates/template-application.xhtml">
+			<ui:define name="conteudo">
+		        <div id="sectionConteudoApplication">
+		        	<h:form id="form" prependId="false">
+			        	<util:msgDialog id="dialog" />
+		        		<p:breadCrumb>
+						    <!-- <p:menuitem value="Home" outcome="home" /> -->
+						    <p:menuitem value="Cadastro" url="#" />
+						    <p:menuitem value="Cadastro de Fabricante" url="#" />
+						</p:breadCrumb>
+			        	
+						<p:panel id="pnl-tela" header="Cadastro de Fabricante">
+							
+							<h:panelGrid columns="2" cellpadding="6">
+							
+								<!-- <p:outputLabel for="manufacturer" value="Fabricante:" />
+								<p:inputText id="manufacturer" 
+									value="#{usuarioManagedBean}" 
+									required="true" maxlength="2"
+									requiredMessage="Campo Fabricante é obrigatório"/>
+															
+								<p:outputLabel for="cnpj" value="CNPJ:" />
+								<p:inputMask id="cnpj" mask="99.999.999/9999-99" maxlength="18" 
+									requiredMessage="Campo CNPJ é obrigatório"
+									value="#{usuarioManagedBean}" required="true" /> -->
+							</h:panelGrid>
+							
+							<f:facet name="footer">
+								
+								<h:panelGroup id="botoes">
+
+									<p:commandButton value="Salvar" icon="ui-icon-disk" actionListener="#{usuarioManagedBean.envia}"
+													 update="@form" />
+
+								</h:panelGroup>
+							</f:facet>
+						</p:panel>
+				</h:form>
+				</div>
+			</ui:define>
+			<ui:define name="extrascripts">
+				<!-- TODO insira seus scripts aqui! -->
+				<!--<h:outputScript library="js" name="/modulo/submodulo/atividade/script.js" target="body" />-->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						<!-- scripts inline -->
+				    });
+				</script>
+			</ui:define>
+			
+		</ui:composition>
+	</h:body>
+</head>
+</html>

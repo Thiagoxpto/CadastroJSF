@@ -1,0 +1,49 @@
+body{
+	border-top: 5px solid #910005; background-color: #FFFFFF;
+}
+
+.login-panel {
+	border: 0 none;
+}
+
+.ui-widget.ui-panel {
+    margin: 10px 4px 20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 6px;
+}
+
+.detail, .login { padding: 20px 15px; margin-top: 40px; }
+
+.detail {
+    position: relative;
+    padding-right: 0;
+    height: 250px;
+    width: 321px;
+    float: right;
+    text-align: justify;
+}
+
+.detail img {
+    height: 71px;
+}
+
+.login { width: 300px; }
+
+.login .logo { text-align: right; }
+.login .logo img { border: 0 none; }
+
+.login table { width: 100%; margin: 20px 0; }
+.login table input { width: 100%; }
+.login table td { padding: 8px; }
+
+.desc {
+    position: relative;
+    padding: 35px 25px 0 0;
+    height: 250px;
+    /* width: 321px; */
+    float: right;
+    text-align: justify;
+    border-right: 1px solid #DFDFDF;
+}
